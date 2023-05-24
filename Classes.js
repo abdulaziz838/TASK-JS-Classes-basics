@@ -20,8 +20,33 @@
  * print out the sum of their ages using calculateAge() method
  */
 class Person {
-  // continue the code here
+  constructor(firstName, lastName, gendor, birthYear) {
+    this.firstName = firstName;
+    this.lastName = lastName;
+    this.gendor = gendor;
+    this.birthYear = birthYear;
+  }
+  printname() {
+    console.log(this.firstName, this.lastName);
+  }
+  calculateAge(currentYear) {
+    console.log(currentYear - this.birthYear);
+  }
 }
+
+const person1 = new Person("abulaziz", "alnaser", "male", "1983");
+const person2 = new Person("Mohammed", "Khalid", "Male", 1980);
+const person3 = new Person("Latifa", "Saad", "Female", 1995);
+const person4 = new Person("Abdullah", "Dhary", "Male", 2000);
+
+person1.printname();
+person1.calculateAge(2023);
+person2.printname();
+person2.calculateAge(2023);
+person3.printname();
+person3.calculateAge(2023);
+person4.printname();
+person4.calculateAge(2023);
 
 /** (Question 2): (15000 Points)
  * 1. Write a class `Movie`, give it the following properties
@@ -45,7 +70,25 @@ class Person {
  */
 
 class Movie {
-  // continue the code here
+  rating = [];
+
+  constructor(title, duration, genre) {
+    this.title = title;
+    this.duration = duration;
+    this.genre = genre;
+  }
+  addRating = (newRating) => {
+    if (newRating > 0 && newRating < 10) {
+      this.rating.push(newRating);
+    }
+  };
+
+  averageRating = (average) => {
+    let sum = 0;
+    this.rating.forEach((Element) => (sum = sum + Element));
+    let avrg = sum / this.rating.length;
+    console.log(avrg);
+  };
 }
 
 /** (Question 3): (1000 Points)
